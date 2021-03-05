@@ -1,12 +1,13 @@
 import React, { useRef, useEffect } from "react";
 import Circle from "./elements/circle.js"
 import Ball from "./elements/ball.js"
-//import EllipticOrbit from "./elements/elliptic-orbit.js";
+import EllipticOrbit from "./elements/elliptic-orbit.js";
+
 export let context = {};
 export let frameCount = 0;
 let myCircle = new Circle(150,80,17);
-// let myOrbit = new ElipticOrbit(150,80,10,6);
-let myBall = new Ball(90,90,20,"red");
+let myOrbit = new EllipticOrbit(150,80,190,16);
+let myBall = new Ball(90,90,20,"blue");
 
 const Canvas = (props) => {
   const canvasRef = useRef(null);
@@ -17,9 +18,10 @@ const Canvas = (props) => {
   }
 
   const draw = (context,frameCount) => {
-    clear(context);
-   myCircle.draw(context,frameCount,{anticlockwise:true});
-    myBall.draw(context,frameCount);
+    if (frameCount%60 == 0 ) clear(context);
+    myOrbit.draw(context,frameCount);
+    //  myCircle.draw(context,frameCount,{anticlockwise:true});
+     myBall.draw(context,frameCount);
   };
 
   useEffect(() => {
