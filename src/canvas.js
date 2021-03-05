@@ -18,7 +18,7 @@ const Canvas = (props) => {
   }
 
   const draw = (context,frameCount) => {
-    if (frameCount%60 == 0 ) clear(context);
+    if (frameCount%25 == 0 ) clear(context);
     myOrbit.draw(context,frameCount);
     //  myCircle.draw(context,frameCount,{anticlockwise:true});
      myBall.draw(context,frameCount);
