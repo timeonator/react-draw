@@ -1,13 +1,13 @@
 import { context, frameCount } from "../canvas"
 
 class Ball {
-    constructor () {
-        this.x = 100;
-        this.y = 80;
-        this.vx = 5;
+    constructor (x,y,radius,color) {
+        this.x = x;
+        this.y = y;
+        this.vx = .5;
         this.vy = 1;
-        this.radius = 25;
-        this.color = 'blue';
+        this.radius = radius;
+        this.color = "red";
     }
 
     draw(context,frameCount) {
@@ -21,7 +21,7 @@ class Ball {
         // context.closePath();
         // context.beginPath();
 
-      context.arc(this.x, this.y , 29, 0, Math.PI * 2, true);
+      context.arc(this.x, this.y , this.radius, 0, Math.PI * 2, true);
       context.closePath(); 
 
       context.fillStyle = this.color;

@@ -6,7 +6,7 @@ export let context = {};
 export let frameCount = 0;
 let myCircle = new Circle(150,80,17);
 // let myOrbit = new ElipticOrbit(150,80,10,6);
-let myBall = new Ball();
+let myBall = new Ball(90,90,20,"red");
 
 const Canvas = (props) => {
   const canvasRef = useRef(null);
