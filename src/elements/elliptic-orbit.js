@@ -17,7 +17,8 @@ class EllipticOrbit {
     // } else {
         this.x = this.a * Math.cos(frameCount) + this.cx;
         this.y = this.b * Math.sin(frameCount) + this.cy;
-        context.lineTo(this.x,this.y);
+        context.moveTo(this.x,this.y);
+        context.arc(this.x, this.y,4,0,Math.PI*2,true);
         
 
         context.strokeStyle = "blue";
