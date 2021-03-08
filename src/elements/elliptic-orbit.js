@@ -17,49 +17,49 @@ class EllipticOrbit {
     // } else {
 
         context.translate(this.cx,this.cy);
-        this.x = this.a * Math.cos(frameCount);
-        this.y = this.b * Math.sin(frameCount);
+        this.x = this.a * Math.cos(frameCount*Math.PI/2);
+        this.y = this.b * Math.sin(frameCount*Math.PI/2);
         context.moveTo(this.x,this.y);
         context.arc(this.x, this.y,4,0,Math.PI*2,true);
         
-        context.rotate(Math.PI / 2);
-        this.x = this.a * Math.cos(frameCount+Math.PI/2) ;
-        this.y = this.b * Math.sin(frameCount+Math.PI/2) ;
+        context.rotate(Math.PI * 3);
+        this.x = this.a * Math.cos(frameCount*Math.PI/3) ;
+        this.y = this.b * Math.sin(frameCount*Math.PI/3) ;
         context.moveTo(this.x,this.y);
         context.arc(this.x, this.y,4,0,Math.PI*2,true);
 
-        context.rotate(Math.PI/4);
+        context.rotate(Math.PI/2);
 
-        this.x = this.a * Math.cos(frameCount);
-        this.y = this.b * Math.sin(frameCount);
+        this.x = this.a * Math.cos(frameCount*Math.PI/4);
+        this.y = this.b * Math.sin(frameCount*Math.PI/4);
         context.moveTo(this.x,this.y);
         context.arc(this.x, this.y,4,0,Math.PI*2,true);
 
-        context.rotate(Math.PI/8);
+        context.rotate(Math.PI*3);
 
-        this.x = this.a * Math.cos(frameCount+Math.PI/4) ;
-        this.y = this.b * Math.sin(frameCount+Math.PI/4) ;
+        this.x = this.a * Math.cos(frameCount*Math.PI/3) ;
+        this.y = this.b * Math.sin(frameCount*Math.PI/3) ;
         context.moveTo(this.x,this.y);
         context.arc(this.x, this.y,4,0,Math.PI*2,true);
 
-        context.rotate(Math.PI/16);
+        context.rotate(Math.PI/3);
 
-        this.x = this.a * Math.cos(frameCount+Math.PI/8);
-        this.y = this.b * Math.sin(frameCount+Math.PI/8);
+        this.x = this.a * Math.cos(frameCount*Math.PI*1.2);
+        this.y = this.b * Math.sin(frameCount*Math.PI*1.2);
         context.moveTo(this.x,this.y);
         context.arc(this.x, this.y,4,0,Math.PI*2,true);
 
-        //context.rotate(Math.PI/2);
+        context.rotate(Math.PI/3);
 
-        this.x = this.a * Math.cos(frameCount+Math.PI/3) ;
-        this.y = this.b * Math.sin(frameCount+Math.PI/3) ;
+        this.x = this.a * Math.cos(frameCount*Math.PI/2) ;
+        this.y = this.b * Math.sin(frameCount*Math.PI/2) ;
         context.moveTo(this.x,this.y);
         context.arc(this.x, this.y,4,0,Math.PI*2,true);
 
-        context.rotate(Math.PI/32);
+        context.rotate(Math.PI*3);
 
-        this.x = this.a * Math.cos(frameCount) ;
-        this.y = this.b * Math.sin(frameCount) ;
+        this.x = this.a * Math.cos(frameCount*Math.PI/1.5) ;
+        this.y = this.b * Math.sin(frameCount*Math.PI/1.5) ;
         context.moveTo(this.x,this.y);
         context.arc(this.x, this.y,4,0,Math.PI*2,true); 
       

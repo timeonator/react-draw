@@ -6,7 +6,7 @@ import EllipticOrbit from "./elements/elliptic-orbit.js";
 export let context = {};
 export let frameCount = 0;
 let myCircle = new Circle(200,200,10);
-let myOrbit = new EllipticOrbit(200,200,160,16);
+let myOrbit = new EllipticOrbit(200,200,160,26);
 let myBall = new Ball(200,200,15,"blue");
 
 const Canvas = (props) => {
