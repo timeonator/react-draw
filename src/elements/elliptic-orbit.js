@@ -15,27 +15,57 @@ class EllipticOrbit {
     //     if (this.a > this.b) context.moveTo(this.a,0);
     //     else  context.moveTo(0,this.b);
     // } else {
-        this.x = this.a * Math.cos(frameCount) + this.cx;
-        this.y = this.b * Math.sin(frameCount) + this.cy;
+
+        context.translate(this.cx,this.cy);
+        this.x = this.a * Math.cos(frameCount);
+        this.y = this.b * Math.sin(frameCount);
         context.moveTo(this.x,this.y);
         context.arc(this.x, this.y,4,0,Math.PI*2,true);
- 
-        this.x = this.b * Math.cos(frameCount) + this.cx;
-        this.y = this.a * Math.sin(frameCount) + this.cy;
-        context.moveTo(this.x,this.y);
-        context.arc(this.x, this.y,4,0,Math.PI*2,true);
- 
+        
+        context.rotate(Math.PI / 2);
+        this.x = this.a * Math.cos(frameCount+Math.PI/2) ;
+        this.y = this.b * Math.sin(frameCount+Math.PI/2) ;
         context.moveTo(this.x,this.y);
         context.arc(this.x, this.y,4,0,Math.PI*2,true);
 
-        this.x = 2/((this.b)^2-(this.a)^2) * (Math.sin(frameCount+Math.PI/4)*Math.cos(frameCount+Math.PI/4)) + this.cx;
-        this.y = 2/((this.b)^2+(this.a)^2) * (Math.sin(frameCount+Math.PI/4)*Math.cos(frameCount-Math.PI/4)) + this.cy;
-        // this.x = 1/((this.b)^2+(this.a)^2) * Math.sin(frameCount)*Math.cos(frameCount) + this.cy;
-        // this.x = 1/((this.b)^2+(this.a)^2) * Math.sin(frameCount+Math.PI/4)*Math.cos(frameCount) + this.cy
+        context.rotate(Math.PI/4);
+
+        this.x = this.a * Math.cos(frameCount);
+        this.y = this.b * Math.sin(frameCount);
         context.moveTo(this.x,this.y);
         context.arc(this.x, this.y,4,0,Math.PI*2,true);
+
+        context.rotate(Math.PI/8);
+
+        this.x = this.a * Math.cos(frameCount+Math.PI/4) ;
+        this.y = this.b * Math.sin(frameCount+Math.PI/4) ;
+        context.moveTo(this.x,this.y);
+        context.arc(this.x, this.y,4,0,Math.PI*2,true);
+
+        context.rotate(Math.PI/16);
+
+        this.x = this.a * Math.cos(frameCount+Math.PI/8);
+        this.y = this.b * Math.sin(frameCount+Math.PI/8);
+        context.moveTo(this.x,this.y);
+        context.arc(this.x, this.y,4,0,Math.PI*2,true);
+
+        //context.rotate(Math.PI/2);
+
+        this.x = this.a * Math.cos(frameCount+Math.PI/3) ;
+        this.y = this.b * Math.sin(frameCount+Math.PI/3) ;
+        context.moveTo(this.x,this.y);
+        context.arc(this.x, this.y,4,0,Math.PI*2,true);
+
+        context.rotate(Math.PI/32);
+
+        this.x = this.a * Math.cos(frameCount) ;
+        this.y = this.b * Math.sin(frameCount) ;
+        context.moveTo(this.x,this.y);
+        context.arc(this.x, this.y,4,0,Math.PI*2,true); 
+      
         context.strokeStyle = "blue";
         context.stroke();
+        context.setTransform(1, 0, 0, 1, 0, 0);
     // }
     }   
 }
