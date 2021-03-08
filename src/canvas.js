@@ -5,9 +5,9 @@ import EllipticOrbit from "./elements/elliptic-orbit.js";
 
 export let context = {};
 export let frameCount = 0;
-let myCircle = new Circle(150,80,17);
-let myOrbit = new EllipticOrbit(150,80,190,16);
-let myBall = new Ball(90,90,20,"blue");
+let myCircle = new Circle(200,200,10);
+let myOrbit = new EllipticOrbit(200,200,160,16);
+let myBall = new Ball(200,200,15,"blue");
 
 const Canvas = (props) => {
   const canvasRef = useRef(null);
@@ -18,10 +18,11 @@ const Canvas = (props) => {
   }
 
   const draw = (context,frameCount) => {
-    if (frameCount%25 == 0 ) clear(context);
+    // if (frameCount%1== 0 ) clear(context);
+    clear(context);
     myOrbit.draw(context,frameCount);
     //  myCircle.draw(context,frameCount,{anticlockwise:true});
-     myBall.draw(context,frameCount);
+    myBall.draw(context,frameCount);
   };
 
   useEffect(() => {
@@ -32,7 +33,7 @@ const Canvas = (props) => {
 
     //Our draw came here
     const render = () => {
-      frameCount++;
+      frameCount+=.04;
       draw(context, frameCount);
       animationFrameId = window.requestAnimationFrame(render);
     };
@@ -43,7 +44,7 @@ const Canvas = (props) => {
     };
   }, [draw]);
 
-  return <canvas ref={canvasRef} {...props} />;
+  return <canvas ref={canvasRef} width={400} height={400} {...props} />;
 };
 
 export default Canvas;

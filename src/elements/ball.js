@@ -7,17 +7,17 @@ class Ball {
         this.vx = .5;
         this.vy = 1;
         this.radius = radius;
-        this.color = "red";
+        this.color = "yellow";
     }
 
     draw(context,frameCount) {
 
         context.beginPath();
-        context.moveTo (100,100);
-        context.lineTo (100,140);
-        context.lineTo(140,140);
-        context.lineTo(140,100);
-        context.lineTo(100,100);
+        // context.moveTo (100,100);
+        // context.lineTo (100,140);
+        // context.lineTo(140,140);
+        // context.lineTo(140,100);
+        // context.lineTo(100,100);
         // context.closePath();
         // context.beginPath();
 

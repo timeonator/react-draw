@@ -19,8 +19,21 @@ class EllipticOrbit {
         this.y = this.b * Math.sin(frameCount) + this.cy;
         context.moveTo(this.x,this.y);
         context.arc(this.x, this.y,4,0,Math.PI*2,true);
-        
+ 
+        this.x = this.b * Math.cos(frameCount) + this.cx;
+        this.y = this.a * Math.sin(frameCount) + this.cy;
+        context.moveTo(this.x,this.y);
+        context.arc(this.x, this.y,4,0,Math.PI*2,true);
+ 
+        context.moveTo(this.x,this.y);
+        context.arc(this.x, this.y,4,0,Math.PI*2,true);
 
+        this.x = 2/((this.b)^2-(this.a)^2) * (Math.sin(frameCount+Math.PI/4)*Math.cos(frameCount+Math.PI/4)) + this.cx;
+        this.y = 2/((this.b)^2+(this.a)^2) * (Math.sin(frameCount+Math.PI/4)*Math.cos(frameCount-Math.PI/4)) + this.cy;
+        // this.x = 1/((this.b)^2+(this.a)^2) * Math.sin(frameCount)*Math.cos(frameCount) + this.cy;
+        // this.x = 1/((this.b)^2+(this.a)^2) * Math.sin(frameCount+Math.PI/4)*Math.cos(frameCount) + this.cy
+        context.moveTo(this.x,this.y);
+        context.arc(this.x, this.y,4,0,Math.PI*2,true);
         context.strokeStyle = "blue";
         context.stroke();
     // }
