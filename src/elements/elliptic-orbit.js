@@ -30,8 +30,8 @@ class EllipticOrbit {
 
         context.rotate(Math.PI/2);
 
-        this.x = this.a * Math.cos(frameCount*Math.PI/4);
-        this.y = this.b * Math.sin(frameCount*Math.PI/4);
+        this.x = this.a * Math.cos(frameCount*Math.PI/2);
+        this.y = this.b * Math.sin(frameCount*Math.PI/2);
         context.moveTo(this.x,this.y);
         context.arc(this.x, this.y,4,0,Math.PI*2,true);
 
