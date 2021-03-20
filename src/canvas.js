@@ -23,6 +23,7 @@ const Canvas = (props) => {
     myOrbit.draw(context,frameCount);
     //  myCircle.draw(context,frameCount,{anticlockwise:true});
     myBall.draw(context,frameCount);
+    (frameCount % 5)?myBall.radius=5:myBall.radius=30
   };
 
   useEffect(() => {
@@ -31,12 +32,13 @@ const Canvas = (props) => {
     frameCount = 0;
     let animationFrameId;
 
-    //Our draw came here
+
     const render = () => {
-      frameCount+=.04;
-      draw(context, frameCount);
+      frameCount+=1;
+      draw(context, frameCount*.4);
       animationFrameId = window.requestAnimationFrame(render);
     };
+
     render();
 
     return () => {
